@@ -64,14 +64,7 @@ const columns = [
         }}
       />
     </div>
-		<>
-			
-
-
-			<button className="btn btn-success" onClick={shipmenthome}>
-				Back to Shipment
-			</button>
-		</>
+		
 	)
 }
 
