@@ -4,95 +4,55 @@ import MaterialTable from "material-table";
 import { useEffect, useState } from "react";
 import "./App.css";
 
+import React, { useState, useEffect } from 'react';
+import './App.css';
+import MaterialTable from 'material-table'  
+import axios from "axios";
 
 function ViewShipments() {
-const history = useHistory();
-const shipmenthome = () => {
-		history.push("/shipment");
-	}
-  const columns = [
-    { title: "ID", field: "name", validate: rowData => rowData.name === undefined || rowData.name === "" ? "Empty" : true },
-    { title: "Source", field: "username", validate: rowData => rowData.username === undefined || rowData.username === "" ? "Empty" : true },
-    { title: "Destination", field: "email", validate: rowData => rowData.email === undefined || rowData.email === "" ? "Empty" : true },
-    { title: "Departure Time", field: "phone", validate: rowData => rowData.phone === undefined || rowData.phone === "" ? "Empty" : true },
-    { title: "Arrival Time", field: "website", validate: rowData => rowData.website === undefined || rowData.website === "" ? "Empty" : true }
-  ];
-  const [data, setData] = useState([]);
-  const url = "https://jsonplaceholder.typicode.com/users";
+  const [tableData, setTableData] = useState([]);
   useEffect(() => {
-    fetch(url)
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        setData(data);
-      })
-      .catch((err) => {
-        console.error(err.message);
-      })
+      fetchData();
   }, []);
+  const fetchData = () => {
+      axios.get("https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json").then(res =>{
+          setTableData(res.data);
+      });
+      console.log(tableData);
+  };
+  const columns = [
+    { title: "Name", field: "name", cellStyle: { background:"#e6ffe6" }, headerStyle: { color: "#fff" } },
+    { title: "Email", field: "email" },
+    { title: "Role", field: "role"},
+  ]
   return (
-    <div>
-      <h1 className="heading">View Shipment </h1>
-      <p className="heading">Do Operation</p>
-      <MaterialTable
-        title="Users Table"
-        columns={columns}
-        data={data}
-        options={{ actionsColumnIndex: -1, addRowPosition: "first" }}
+    <div className="App">
+      {/* <h1 align="center">Riyaz ItGuy</h1> */}
+      <MaterialTable columns={columns} data={tableData}
         editable={{
-          onRowAdd: newData => new Promise((resolve, reject) => {
-            fetch(url, {
-              method: "POST",
-              headers: {
-                'Content-type': "application/json"
-              },
-              body: JSON.stringify(newData)
-            })
-              .then(response => response.json())
-              .then(response => {
-                const addData = [...data, { ...response }];
-                setData(addData);
-                console.log(data);
-                resolve()
-              })
+          onRowUpdate: (newRow, oldRow) => new Promise((resolve, reject) => {
+            const updatedData = [...tableData]
+            updatedData[oldRow.tableData.id] = newRow
+            setTableData(updatedData)
+            setTimeout(() => resolve(), 500)
           }),
-          onRowUpdate: (newData, oldData) => new Promise((resolve, reject) => {
-            fetch(url + "/" + oldData.id, {
-              method: "PATCH",
-              headers: {
-                'Content-type': "application/json"
-              },
-              body: JSON.stringify(newData)
-            })
-              .then(resp => resp.json())
-              .then(resp => {
-                const dataUpdate = [...data];
-                dataUpdate[oldData.tableData.id] = resp;
-                setData(dataUpdate);
-                resolve()
-              })
-          }),
-          onRowDelete: oldData => new Promise((resolve, reject) => {
-            fetch(url + "/" + oldData.id, {
-              method: "DELETE",
-              headers: {
-                'Content-type': "application/json"
-              },
-
-            })
-              .then(resp => resp.json())
-              .then(resp => {
-                const deletedatda = data.filter(item => item.id !== oldData.id)
-                setData(deletedatda);
-                resolve()
-              })
+          onRowDelete: (selectedRow) => new Promise((resolve, reject) => {
+            const updatedData = [...tableData]
+            updatedData.splice(selectedRow.tableData.id, 1)
+            setTableData(updatedData)
+            setTimeout(() => resolve(), 1000)
           })
         }}
-      />
+        onSelectionChange={(selectedRows) => console.log(selectedRows)}
+        options={{
+          sorting: true, search: true,
+          searchFieldAlignment: "right",  paging: true, pageSizeOptions: [2, 5, 10], pageSize: 10,
+          paginationType: "stepped", showFirstLastPageButtons: true, paginationPosition: "bottom",
+         actionsColumnIndex: -1, selection: true,
+          headerStyle: { background: "#00e600",color:"#fff"}  
+        }}
+        title="Admin UI"/>
     </div>
-
   );
 }
-
 export default ViewShipments;
