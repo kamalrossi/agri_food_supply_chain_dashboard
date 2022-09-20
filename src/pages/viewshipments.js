@@ -27,7 +27,7 @@ function ViewShipments() {
   return (
     <div>
       <h1 className="heading">Shipment information</h1>
-      <p className="heading">CRUD Operation</p>
+   
       <MaterialTable
         title="View All Information"
         columns={columns}
