@@ -32,7 +32,41 @@ function ViewShipments() {
         title="View All Information"
         columns={columns}
         data={data}
-       
+        options={{ actionsColumnIndex: -1, addRowPosition: "first" }}
+        editable={{
+          onRowAdd: newData => new Promise((resolve, reject) => {
+            fetch(url, {
+              method: "POST",
+              headers: {
+                'Content-type': "application/json"
+              },
+              body: JSON.stringify(newData)
+            })
+              .then(response => response.json())
+              .then(response => {
+                const addData = [...data, { ...response }];
+                setData(addData);
+                console.log(data);
+                resolve()
+              })
+          }),
+          onRowUpdate: (newData, oldData) => new Promise((resolve, reject) => {
+            fetch(url + "/" + oldData.id, {
+              method: "PATCH",
+              headers: {
+                'Content-type': "application/json"
+              },
+              body: JSON.stringify(newData)
+            })
+              .then(resp => resp.json())
+              .then(resp => {
+                const dataUpdate = [...data];
+                dataUpdate[oldData.tableData.id] = resp;
+                setData(dataUpdate);
+                resolve()
+              })
+          })
+         
         }}
       />
     </div>
