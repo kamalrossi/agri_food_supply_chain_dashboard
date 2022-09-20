@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 
 
-function ViweShipments() {
+function ViewShipments() {
 const history = useHistory();
 const shipmenthome = () => {
 		history.push("/shipment");
