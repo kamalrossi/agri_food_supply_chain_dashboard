@@ -26,61 +26,13 @@ function ViewShipments() {
   }, []);
   return (
     <div>
-      <h1 className="heading">React Material Table</h1>
+      <h1 className="heading">Shipment information</h1>
       <p className="heading">CRUD Operation</p>
       <MaterialTable
-        title="Users Table"
+        title="View All Information"
         columns={columns}
         data={data}
-        options={{ actionsColumnIndex: -1, addRowPosition: "first" }}
-        editable={{
-          onRowAdd: newData => new Promise((resolve, reject) => {
-            fetch(url, {
-              method: "POST",
-              headers: {
-                'Content-type': "application/json"
-              },
-              body: JSON.stringify(newData)
-            })
-              .then(response => response.json())
-              .then(response => {
-                const addData = [...data, { ...response }];
-                setData(addData);
-                console.log(data);
-                resolve()
-              })
-          }),
-          onRowUpdate: (newData, oldData) => new Promise((resolve, reject) => {
-            fetch(url + "/" + oldData.id, {
-              method: "PATCH",
-              headers: {
-                'Content-type': "application/json"
-              },
-              body: JSON.stringify(newData)
-            })
-              .then(resp => resp.json())
-              .then(resp => {
-                const dataUpdate = [...data];
-                dataUpdate[oldData.tableData.id] = resp;
-                setData(dataUpdate);
-                resolve()
-              })
-          }),
-          onRowDelete: oldData => new Promise((resolve, reject) => {
-            fetch(url + "/" + oldData.id, {
-              method: "DELETE",
-              headers: {
-                'Content-type': "application/json"
-              },
-
-            })
-              .then(resp => resp.json())
-              .then(resp => {
-                const deletedatda = data.filter(item => item.id !== oldData.id)
-                setData(deletedatda);
-                resolve()
-              })
-          })
+       
         }}
       />
     </div>
