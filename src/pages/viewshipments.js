@@ -8,13 +8,13 @@ import axios from "axios";
 import MaterialTable from "material-table";
 import { useEffect, useState } from "react";
 import "./App.css";
-function App() {
+function ViewShipments() {
   const columns = [
-    { title: "Name", field: "name", validate: rowData => rowData.name === undefined || rowData.name === "" ? "Empty" : true },
-    { title: "Username", field: "username", validate: rowData => rowData.username === undefined || rowData.username === "" ? "Empty" : true },
-    { title: "Email", field: "email", validate: rowData => rowData.email === undefined || rowData.email === "" ? "Empty" : true },
-    { title: "Phone", field: "phone", validate: rowData => rowData.phone === undefined || rowData.phone === "" ? "Empty" : true },
-    { title: "Web Site", field: "website", validate: rowData => rowData.website === undefined || rowData.website === "" ? "Empty" : true }
+    { title: "ID", field: "name", validate: rowData => rowData.name === undefined || rowData.name === "" ? "Empty" : true },
+    { title: "Source", field: "username", validate: rowData => rowData.username === undefined || rowData.username === "" ? "Empty" : true },
+    { title: "Destination", field: "email", validate: rowData => rowData.email === undefined || rowData.email === "" ? "Empty" : true },
+    { title: "Arrival Time", field: "phone", validate: rowData => rowData.phone === undefined || rowData.phone === "" ? "Empty" : true },
+    { title: "Departure Time", field: "website", validate: rowData => rowData.website === undefined || rowData.website === "" ? "Empty" : true }
   ];
   const [data, setData] = useState([]);
   const url = "https://jsonplaceholder.typicode.com/users";
