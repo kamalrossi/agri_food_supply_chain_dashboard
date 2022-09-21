@@ -14,6 +14,10 @@ import AddShipment from "./pages/addshipment";
 import EditShipment from "./pages/editshipment";
 import DeleteShipment from "./pages/deleteshipment";
 import ShipmentForm from "./pages/shipmentform";
+import EditOrder from "./pages/editorder";
+import DeleteOrder from "./pages/deleteorder";
+import ViewOrders from "./pages/vieworders";
+
 
 
 function App() {
@@ -33,7 +37,12 @@ function App() {
         <Route path="/editshipment" component={EditShipment} />
         <Route path="/shipmentform" component={ShipmentForm} />
         <Route path="/deleteshipment" component={DeleteShipment} />
+  <Route path="/vieworders" component={ViewOrders} />
+        <Route path="/editorder" component={EditOrder} />
+        <Route path="/orderform" component={OrderForm} />
+        <Route path="/deleteorder" component={DeleteOrder} />
 
+               
 
        </Switch>
     </Router>
