@@ -29,7 +29,7 @@ function App() {
 
         <Route path="/viewshipments" component={ViewShipments} />
         <Route path="/editshipment" component={EditShipment} />
-        <Route path="/addshipment" component={AddShipment} />
+        <Route path="/shipmentform" component={ShipmentForm} />
         <Route path="/deleteshipment" component={DeleteShipment} />
 
 
