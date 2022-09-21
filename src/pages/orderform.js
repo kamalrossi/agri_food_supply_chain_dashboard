@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import OrderBasic from './OrderBasic';
-import OrderConfirm from './OrderConfirm';
-import OrderSuccess from './OrderSuccess';
+import OrderBasic from './orderbasic';
+import OrderConfirm from './orderconfirm';
+import OrderSuccess from './ordersuccess';
 export class OrderForm extends Component {
 state = {
 step: 1,
