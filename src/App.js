@@ -50,7 +50,8 @@ function App() {
         <Route path="/editorder" component={EditOrder} />
         <Route path="/orderform" component={OrderForm} />
         <Route path="/deleteorder" component={DeleteOrder} />
-
+        
+        <Route path="/customer" component={Customer} />
         <Route path="/viewcustomers" component={ViewCustomers} />
         <Route path="/editcustomer" component={EditCustomer} />
         <Route path="/customerform" component={CustomerForm} />
