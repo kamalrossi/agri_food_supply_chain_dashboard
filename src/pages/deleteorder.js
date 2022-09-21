@@ -1,7 +1,7 @@
 import MaterialTable from "material-table";
 import { useEffect, useState } from "react";
 
-function DeleteCustomer() {
+function DeleteOrder() {
   const columns = [
     { title: "ID", field: "name", validate: rowData => rowData.name === undefined || rowData.name === "" ? "Empty" : true },
     { title: "Product Name", field: "username", validate: rowData => rowData.username === undefined || rowData.username === "" ? "Empty" : true },
