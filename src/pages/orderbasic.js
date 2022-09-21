@@ -7,7 +7,7 @@ import Button from '@material-ui/core/Button';
 
 
 
-export class orderbasic extends Component {
+export class OrderBasic extends Component {
   continue = e => {
     e.preventDefault();
     this.props.nextStep();
