@@ -11,7 +11,7 @@ export class ShipmentConfirm extends Component {
     e.preventDefault();
     // PROCESS FORM //
 
- const categoryObject = {
+ const shipmentObject = {
       text: "rossi",
       day: "rossi",
       
