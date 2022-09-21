@@ -1,7 +1,7 @@
 import MaterialTable from "material-table";
 import { useEffect, useState } from "react";
 
-function DeletePharmer() {
+function DeleteFarmer() {
   const columns = [
     { title: "ID", field: "name", validate: rowData => rowData.name === undefined || rowData.name === "" ? "Empty" : true },
     { title: "Name", field: "username", validate: rowData => rowData.username === undefined || rowData.username === "" ? "Empty" : true },
