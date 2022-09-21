@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Dialog from '@material-ui/core/Dialog';
 import AppBar from '@material-ui/core/AppBar';
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
+import "./App.css";
 export class ShipmentSuccess extends Component {
   continue = e => {
     e.preventDefault();
