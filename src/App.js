@@ -14,10 +14,17 @@ import AddShipment from "./pages/addshipment";
 import EditShipment from "./pages/editshipment";
 import DeleteShipment from "./pages/deleteshipment";
 import ShipmentForm from "./pages/shipmentform";
+
 import EditOrder from "./pages/editorder";
 import DeleteOrder from "./pages/deleteorder";
 import ViewOrders from "./pages/vieworders";
 import OrderForm from "./pages/orderform";
+
+import Customer from "./pages/customer";
+import EditCustomer from "./pages/editcustomer";
+import DeleteCustomer from "./pages/deletecustomer";
+import ViewCustomers from "./pages/viewcustomers";
+import CustomerForm from "./pages/customerform";
 
 
 function App() {
