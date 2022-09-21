@@ -10,7 +10,7 @@ function Shipment() {
 		history.push("/viewshipments")
 	}
        const addshipment = () => {
-		history.push("/addshipment")
+		history.push("/shipmentform")
 	}
 
 
@@ -34,7 +34,7 @@ function Shipment() {
 
 				<p className="lead">
 					<button className="btn btn-success"
-						onClick={addshipment}>Add Shipment
+						onClick={shipmentform}>Add Shipment
 					</button>
 
                                         <button className="btn btn-success"
