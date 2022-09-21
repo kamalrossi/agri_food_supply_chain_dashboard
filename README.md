@@ -2,8 +2,6 @@ Agri-Food Supply Chain Dashboard
 
 
 
-Keywords: React, Material, Axios, Mongo,NodeJS, MERN
-
 
 AgroFoodTech is a software for managing
 agri-food supply chain network 
