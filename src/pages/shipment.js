@@ -9,7 +9,7 @@ function Shipment() {
 	const viewshipments = () => {
 		history.push("/viewshipments")
 	}
-       const addshipment = () => {
+       const shipmentform = () => {
 		history.push("/shipmentform")
 	}
 
