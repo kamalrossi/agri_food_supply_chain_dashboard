@@ -32,17 +32,22 @@ function App() {
         <Route path="/shipment" component={Shipment} />
         <Route path="/routeplanner" component={Routeplanner} />
         <Route path="/order" component={Order} />
+          
 
         <Route path="/viewshipments" component={ViewShipments} />
         <Route path="/editshipment" component={EditShipment} />
         <Route path="/shipmentform" component={ShipmentForm} />
         <Route path="/deleteshipment" component={DeleteShipment} />
-  <Route path="/vieworders" component={ViewOrders} />
+      
+        <Route path="/vieworders" component={ViewOrders} />
         <Route path="/editorder" component={EditOrder} />
         <Route path="/orderform" component={OrderForm} />
         <Route path="/deleteorder" component={DeleteOrder} />
 
-               
+        <Route path="/viewcustomers" component={ViewCustomers} />
+        <Route path="/editcustomer" component={EditCustomer} />
+        <Route path="/customerform" component={CustomerForm} />
+        <Route path="/deletecustomer" component={DeleteCustomer} />     
 
        </Switch>
     </Router>
