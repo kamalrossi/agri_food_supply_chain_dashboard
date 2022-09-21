@@ -26,6 +26,11 @@ import DeleteCustomer from "./pages/deletecustomer";
 import ViewCustomers from "./pages/viewcustomers";
 import CustomerForm from "./pages/customerform";
 
+import Farmer from "./pages/farmer";
+import EditFarmer from "./pages/editfarmer";
+import DeleteFamer from "./pages/deletefarmer";
+import ViewFarmers from "./pages/viewfarmers";
+import FarmerForm from "./pages/farmerform";
 
 function App() {
   return (
@@ -57,6 +62,14 @@ function App() {
         <Route path="/customerform" component={CustomerForm} />
         <Route path="/deletecustomer" component={DeleteCustomer} />     
 
+          
+        <Route path="/farmer" component={Farmer} />
+        <Route path="/viewfarmers" component={ViewCustomers} />
+        <Route path="/editfarmer" component={EditCustomer} />
+        <Route path="/farmerform" component={FarmerForm} />
+        <Route path="/deletefarmer" component={DeleteFarmer} />  
+          
+          
        </Switch>
     </Router>
   );
