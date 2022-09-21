@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import OrderBasic from './orderbasic';
-import OrderConfirm from './orderconfirm';
-import OrderSuccess from './ordersuccess';
-export class OrderForm extends Component {
+import CustomerBasic from './customerbasic';
+import CustomerConfirm from './customerconfirm';
+import CustomerSuccess from './customersuccess';
+export class CustomerForm extends Component {
 state = {
 step: 1,
 name:'',
@@ -39,7 +39,7 @@ email:'',
     switch (step) {
       case 1:
         return (
-          <OrderBasic
+          <CustomerBasic
             nextStep={this.nextStep}
             handleChange={this.handleChange}
             values={values}
@@ -48,18 +48,18 @@ email:'',
     
       case 2:
         return (
-          <OrderConfirm
+          <CustomerConfirm
             nextStep={this.nextStep}
             prevStep={this.prevStep}
             values={values}
           />
         );
       case 3:
-        return <OrderSuccess />;
+        return <CustomerSuccess />;
       default:
         (console.log('Order'))
     }
   }
 }
 
-export default OrderForm;
+export default CustomerForm;
