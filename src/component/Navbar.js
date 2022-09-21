@@ -55,8 +55,8 @@ function Navbar() {
             <Link to="/farmer" className={classes.link}>
              Farmer
             </Link>
-            <Link to="/marketer" className={classes.link}>
-             Marketer
+            <Link to="/customer" className={classes.link}>
+            Customer
             </Link>
             <Link to="/shipment" className={classes.link}>
               Shipment
