@@ -28,7 +28,7 @@ import CustomerForm from "./pages/customerform";
 
 import Farmer from "./pages/farmer";
 import EditFarmer from "./pages/editfarmer";
-import DeleteFamer from "./pages/deletefarmer";
+import DeleteFarmer from "./pages/deletefarmer";
 import ViewFarmers from "./pages/viewfarmers";
 import FarmerForm from "./pages/farmerform";
 
@@ -64,8 +64,8 @@ function App() {
 
           
         <Route path="/farmer" component={Farmer} />
-        <Route path="/viewfarmers" component={ViewCustomers} />
-        <Route path="/editfarmer" component={EditCustomer} />
+        <Route path="/viewfarmers" component={ViewFarmers} />
+        <Route path="/editfarmer" component={EditFarmer} />
         <Route path="/farmerform" component={FarmerForm} />
         <Route path="/deletefarmer" component={DeleteFarmer} />  
           
