@@ -17,7 +17,7 @@ function Routeplanner() {
 	const editrouteplanner = () => {
 		history.push("/editrouteplanner")
 	}
-       const delete = () => {
+       const deleterouteplanner = () => {
 		history.push("/deleterouteplanner")
 	}
 
