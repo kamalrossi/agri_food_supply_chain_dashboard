@@ -83,5 +83,5 @@ lastarrivaltime:'',
   }
 }
 
-export default RoueplannerForm;
+export default RouteplannerForm;
 
