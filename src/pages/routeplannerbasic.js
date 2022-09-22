@@ -47,8 +47,8 @@ export class RouteplannerBasic extends Component {
           <TextField
               placeholder="Enter CustomerPhone"
               label="Customer Phone"
-              onChange={handleChange('customerPhone')}
-              defaultValue={values.customerPhone}
+              onChange={handleChange('customerphone')}
+              defaultValue={values.customerphone}
               margin="normal"
               fullWidth
             />
@@ -58,8 +58,8 @@ export class RouteplannerBasic extends Component {
            <TextField
               placeholder="Enter Source Address"
               label="Source Address"
-              onChange={handleChange('sourceAddress')}
-              defaultValue={values.sourceAddress}
+              onChange={handleChange('source')}
+              defaultValue={values.source}
               margin="normal"
               fullWidth
             />
@@ -69,8 +69,8 @@ export class RouteplannerBasic extends Component {
            <TextField
               placeholder="Enter Destination Address"
               label="Destination Address"
-              onChange={handleChange('destinationAddress')}
-              defaultValue={values.destinationAddress}
+              onChange={handleChange('destination')}
+              defaultValue={values.destination}
               margin="normal"
               fullWidth
             />
