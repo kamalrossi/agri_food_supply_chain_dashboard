@@ -32,6 +32,13 @@ import DeleteFarmer from "./pages/deletefarmer";
 import ViewFarmers from "./pages/viewfarmers";
 import FarmerForm from "./pages/farmerform";
 
+
+import Routeplanner from "./pages/routeplanner";
+import EditRouteplanner from "./pages/editrouteplanner";
+import DeleteRouteplanner from "./pages/deleterouteplanner";
+import ViewRouteplanners from "./pages/viewrouteplanners";
+import RouteplannerForm from "./pages/routeplannerform";
+
 function App() {
   return (
     <Router>
