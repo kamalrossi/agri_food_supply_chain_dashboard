@@ -6,7 +6,6 @@ import Home from "./pages/home";
 
 import Marketer from "./pages/marketer";
 import Shipment from "./pages/shipment";
-import Routeplanner from "./pages/routeplanner";
 import Order from "./pages/order";
 import ViewShipments from "./pages/viewshipments";
 
@@ -75,7 +74,14 @@ function App() {
         <Route path="/editfarmer" component={EditFarmer} />
         <Route path="/farmerform" component={FarmerForm} />
         <Route path="/deletefarmer" component={DeleteFarmer} />  
+
+                  <Route path="/routeplanner" component={Routeplanner} />
+        <Route path="/viewrouteplanners" component={ViewRouteplanners} />
+        <Route path="/editrouteplanner" component={EditRouteplanner} />
+        <Route path="/routeplannerform" component={RouteplannerForm} />
+        <Route path="/deleterouteplanner" component={DeleteRouteplanner} />  
           
+
           
        </Switch>
     </Router>
